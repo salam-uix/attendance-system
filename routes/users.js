@@ -17,17 +17,19 @@ const userController = require('../controller/users');
  */
 router.get('/:userId', userController.getUserById)
 
+router.put('/:userId', userController.putUserById)
+
 /**
  * update user by id
  * @method PUT
  */
-router.put('/:userId', () => { })
+router.patch('/:userId', userController.patchUserById)
 
 /**
  * delete user by id
  * @method PUT
  */
-router.delete('/:userId', () => { })
+router.delete('/:userId', userController.deleteUserById)
 
 router.get('/', userController.getUsers);
 
