@@ -1,11 +1,11 @@
-const router = require('express').Router();
-const userController = require('../controller/users');
+const router = require("express").Router();
+const userController = require("../controller/users");
 
 /**
  * Get all users, include
  * - filter
  * - sort
- * - pagination 
+ * - pagination
  * - Select properties
  * - @route /api/v1/users?sort=["by","name"]
  * - @method GET
@@ -15,29 +15,27 @@ const userController = require('../controller/users');
 /**
  * Get user by id or email
  */
-router.get('/:userId', userController.getUserById)
+router.get("/:userId", userController.getUserById);
 
-router.put('/:userId', userController.putUserById)
+router.put("/:userId", userController.putUserById);
 
 /**
  * update user by id
  * @method PUT
  */
-router.patch('/:userId', userController.patchUserById)
+router.patch("/:userId", userController.patchUserById);
 
 /**
  * delete user by id
  * @method PUT
  */
-router.delete('/:userId', userController.deleteUserById)
+router.delete("/:userId", userController.deleteUserById);
 
-router.get('/', userController.getUsers);
+router.get("/", userController.getUsers);
 
 /**
  * create new user
  */
-router.post('/', userController.postUser)
-
-
+router.post("/", userController.postUser);
 
 module.exports = router;
